@@ -111,3 +111,9 @@ global.COUNT_DATA = (query, callback) => {
 		callback(results[0].length);
 	});
 };
+
+global.CHECK_DATA_EXISTS = (query, callback) => {
+	COUNT_DATA(query, (count) => {
+		callback(count > 0);
+	});
+};

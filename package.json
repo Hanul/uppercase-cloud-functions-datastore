@@ -1,6 +1,6 @@
 {
 	"name": "uppercase-cloud-functions-datastore",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"dependencies": {
 		"uppercase-cloud-functions": "^0.1.0",
 		"@google-cloud/datastore": "^1.4.0"
