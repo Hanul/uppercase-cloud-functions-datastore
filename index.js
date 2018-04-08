@@ -3,7 +3,7 @@ require('uppercase-cloud-functions');
 global.DATASTORE = require('@google-cloud/datastore')();
 
 CLOUD_FUNCTION.addAvoidColdStartProcess(() => {
-	DATASTORE.runQuery(DATASTORE.createQuery('__DONT_COLD_START')).then((results) => {
+	DATASTORE.runQuery(DATASTORE.createQuery('__DONT_COLD_START').select('__key__')).then((results) => {
 		// ignore.
 	});
 });
