@@ -27,6 +27,17 @@ global.SAVE_DATA = (kind, data, responseError, callback) => {
 		} else {
 			data.id = INTEGER(key.id);
 			callback(data);
+			
+			if (global.BACKUP_URL !== undefined && global.BACKUP_SECURE_KEY !== undefined) {
+				POST({
+					url : global.BACKUP_URL,
+					data : {
+						kind : kind,
+						data : data,
+						secureKey : global.BACKUP_SECURE_KEY
+					}
+				});
+			}
 		}
 	});
 };
@@ -86,6 +97,17 @@ global.UPDATE_DATA = (kind, id, data, responseError, callback) => {
 		} else if (callback !== undefined) {
 			data.id = id;
 			callback(data);
+			
+			if (global.BACKUP_URL !== undefined && global.BACKUP_SECURE_KEY !== undefined) {
+				POST({
+					url : global.BACKUP_URL,
+					data : {
+						kind : kind,
+						data : data,
+						secureKey : global.BACKUP_SECURE_KEY
+					}
+				});
+			}
 		}
 	});
 };
