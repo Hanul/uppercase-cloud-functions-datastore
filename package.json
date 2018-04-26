@@ -1,8 +1,8 @@
 {
 	"name": "uppercase-cloud-functions-datastore",
-	"version": "0.9.8",
+	"version": "1.0.0",
 	"dependencies": {
-		"uppercase-cloud-functions": "^0.9.8",
+		"uppercase-cloud-functions": "^1.0.0",
 		"@google-cloud/datastore": "^1.4.0"
 	},
 	"main": "index.js"
